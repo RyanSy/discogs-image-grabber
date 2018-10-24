@@ -1,0 +1,17 @@
+{
+  "name": "discogs-image-grabber",
+  "version": "1.0.0",
+  "description": "searches for and saves images from discogs",
+  "main": "discogs-image-grabber.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ryan sy",
+  "license": "ISC",
+  "dependencies": {
+    "dot-env": "0.0.1",
+    "dotenv": "^6.1.0",
+    "image-downloader": "^3.4.1",
+    "request": "^2.88.0"
+  }
+}

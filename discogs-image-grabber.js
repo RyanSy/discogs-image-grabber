@@ -10,6 +10,7 @@ use array of product titles for search queries
 
 var searchQuery = 'Nas - Illmatic';
 var searchQueryModified = searchQuery.replace(/\s/g, '+');
+var imageUrl;
 
 // get image url
 var options = {
@@ -23,7 +24,7 @@ request(options, function(error, response, body) {
   console.log('status code: ', response.statusCode);
   var jsonBody = JSON.parse(body);
   console.log('body:\n ', jsonBody.results[0].cover_image);
-  var imageUrl = jsonBody.results[0].cover_image;
+  imageUrl = jsonBody.results[0].cover_image;
 
   // download image
   var options2 = {

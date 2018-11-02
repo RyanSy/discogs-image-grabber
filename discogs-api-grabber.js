@@ -9,6 +9,7 @@ var imageUrl;
 var genre;
 
 // add setTimeout
+// make this async
 queryArray.forEach(function(query) {
   query = query;
   var queryModified = encodeURI(query.replace(/\s/g, '+'));
@@ -20,6 +21,7 @@ queryArray.forEach(function(query) {
       'User-Agent': 'image-grabber'
     }
   })
+    // this should await initial get request
     .then(function(response) {
       imageUrl = response.data.results[0].cover_image;
       genre = response.data.results[0].genre[0];
@@ -33,6 +35,7 @@ queryArray.forEach(function(query) {
         responseType: 'stream'
       })
         .then(function(response) {
+          // if response is null, copy query to a seperate csv file
           response.data.pipe(fs.createWriteStream('../images/' + query + '.jpg'));
           return;
         })
